@@ -73,7 +73,31 @@ values(marPol) <- values(marPol)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#                                    FORMAT DATA
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Modify projection
+# We use the Lambert projection as a default, which allows us to work in meters
+# rather than in degrees
+prj <- st_crs(32198)$proj4string
+marPol <- projectRaster(marPol, crs = prj)
+
+
+# We also work with polygons rather than rasters, so we need to transform raster
+# cells to polygons. Data could be left as rasters, but we elected to work with
+# a hexagonal grid and so have decided to convert everything in polygons.
+# Transform raster to polygon
+marPol <- rasterToPolygons(marPol)
+
+# Transform to sf object
+marPol <- st_as_sf(marPol)
+
+# Select only features with values > 0
+id0 <- marPol$ocean_pollution > 0
+marPol <- marPol[id0, ]
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #                                  EXPORT DATA
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Export object as .RData
-save(marPol, file = './data/rawData/marPolStL.RData')
+save(marPol, file = './data/rawData/marPol.RData')

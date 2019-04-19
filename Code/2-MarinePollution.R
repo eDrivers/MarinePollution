@@ -8,7 +8,7 @@ library(magrittr)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #                                    DATA
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-load('./data/rawData/marinePollution.RData')
+load('./data/rawData/marPol.RData')
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,7 +18,7 @@ load('./data/rawData/marinePollution.RData')
 # We therefore simply format the object for final export of the driver layer.
 
 # Change column name
-colnames(marPol)[1] <- 'marinePollution'
+colnames(marPol)[1] <- 'MarinePollution'
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,5 +32,5 @@ save(marPol, file = './Data/Driver/MarinePollution.RData')
 #                                 VISUALIZE DATA
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 png('./Figures/MarinePollution.png', width = 1280, height = 1000, res = 200, pointsize = 6)
-plot(marPol[, 'marinePollution'], border = 'transparent')
+plot(marPol[, 'MarinePollution'], border = 'transparent')
 dev.off()
