@@ -24,8 +24,11 @@ colnames(marPol)[1] <- 'MarinePollution'
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #                                  EXPORT DATA
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Change name for uniformity
+MarinePollution <- marPol
+
 # Export object as .RData
-save(marPol, file = './Data/Driver/MarinePollution.RData')
+save(MarinePollution, file = './Data/Driver/MarinePollution.RData')
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
