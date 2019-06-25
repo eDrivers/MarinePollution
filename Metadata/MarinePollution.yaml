@@ -1,0 +1,26 @@
+title: "Marine pollution"
+subtitle: ""
+description: "Marine pollution as a function of port volume in tonnes and number of shipping traffic lanes"
+
+rawData:
+  source: "Halpern, B. S., Frazier, M., Potapenko, J., Casey, K. S., Koenig, K., Longo, C., et al. (2015). Cumulative human impacts: Raw stressor data (2008 and 2013). Knowledge Network for Biocomplexity. doi:10.5063/f1s180fs."
+  contact: "Benjamin Halpern"
+
+dataDescription:
+  units: "port volume in tonnes and number of shipping traffic lanes"
+  spatialResolution: "Modeled 1 km^2"
+  temporalResolution: "Annual and event-based"
+  years: "2011 and 2003-2011"
+  projection:
+    proj4string: "+proj=lcc +lat_1=60 +lat_2=46 +lat_0=44 +lon_0=-68.5 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    egsp: "32198"
+  extent:
+    xmin: "-207811.8"
+    ymin: "122048.5"
+    xmax: "1475044"
+    ymax: "1038475"
+
+availability:
+  rawData: "yes"
+  code: "yes"
+  driver: "yes"
